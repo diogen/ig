@@ -302,8 +302,7 @@ def render():
         for lb in LABELS:
             lb.draw(fr, t)
         draw_cta(fr, t)
-        if t < 0.2:
-            fr *= t / 0.2
+        # no fade from black at the start: Instagram uses the first frame as a fallback cover
         if t > DUR - 0.5:
             fr *= clamp((DUR - t) / 0.5)
         out = (np.clip(fr, 0, 1) * 255 + 0.5).astype(np.uint8)

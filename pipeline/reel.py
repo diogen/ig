@@ -29,7 +29,8 @@ class Stack:
                        S.clamp(ui / 0.1) * out_p)
             y += spr.height - 34
 
-HOOK = Stack(0.08, 1.74, [("Couples who", 88, S.INK, S.WHITE, None),
+# starts "before" 0 so the first line is already fully visible on frame 0 (strong first frame)
+HOOK = Stack(-0.35, 1.74, [("Couples who", 88, S.INK, S.WHITE, None),
                           ("stretch together...", 88, S.WHITE, S.ORANGE, None)], cy=300)
 PAYOFF = Stack(10.84, 11.98, [("...high-five", 80, S.INK, S.WHITE, None),
                               ("together", 80, S.WHITE, S.ORANGE, "✋")], cy=LB - 40, cx=S.W / 2 - 60)
